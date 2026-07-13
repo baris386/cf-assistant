@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from google import genai
 import markdown
 
+
 # Load API key from .env file
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
