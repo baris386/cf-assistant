@@ -4,3 +4,4 @@ numpy
 python-dotenv
 requests
 beautifulsoup4
+genai
