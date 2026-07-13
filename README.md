@@ -12,3 +12,4 @@ font = "sans serif"
 
 
 this is .env file u just need to add ur api
+
