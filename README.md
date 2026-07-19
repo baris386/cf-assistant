@@ -11,5 +11,4 @@ font = "sans serif"
 
 
 
-this is .env file u just need to add ur api
-
+i didnt  added my .env file but u can use the text above for urself(just add ur gemini-api)
