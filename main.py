@@ -800,9 +800,11 @@ SYSTEM_INSTRUCTION = (
     "CRITICAL RULES:\n"
     "1. Respond exclusively in ENGLISH.\n"
     "2. STRICTLY FORBIDDEN from providing full source code.\n"
-    "3. DO NOT use LaTeX or dollar signs ($) for complexities. Write them as plain text like O(N log N) or O(10 * log N).\n"
-    "4. Provide logical observation hints or step-by-step editorial structures.\n"
+    "3. Provide logical observation hints or step-by-step editorial structures.\n"
 )
+
+#    "3. DO NOT use LaTeX or dollar signs ($) for complexities. Write them as plain text like O(N log N) or O(10 * log N).\n"
+#    "4. Provide logical observation hints or step-by-step editorial structures.\n"
 
 # --- SPLIT SCREEN INTERFACE LAYOUT ---
 col1, col2 = st.columns([1, 1.3])
