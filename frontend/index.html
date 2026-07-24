@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CF Assistant — CP Coach</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=1.0.2">
+</head>
+<body>
+    <!-- Interactive Background Canvas -->
+    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;"></canvas>
+    <div class="block-container">
+        <!-- LEFT COLUMN -->
+        <div class="left-column">
+            <div class="hero-banner">
+                <h1>🤖 CF Assistant</h1>
+                <p class="hero-tagline">
+                    Your competitive programming companion — sync your <strong>Codeforces</strong> profile,
+                    solve problems with guided hints, and get personalized recommendations.
+                </p>
+            </div>
+
+            <!-- STEP 1: Profile -->
+            <div class="section-card section-spacer">
+                <div class="section-label">Step 1</div>
+                <div class="section-title">Codeforces Handle</div>
+                <p class="section-desc">Connect your profile to track solved problems and filter recommendations.</p>
+                <div class="input-group">
+                    <input type="text" id="cf-handle-input" class="cyber-input" placeholder="e.g. tourist">
+                    <button id="sync-profile-btn" class="cyber-btn">Sync Profile</button>
+                </div>
+                <div id="profile-status"></div>
+            </div>
+
+            <!-- STEP 2: Problem Solver -->
+            <div class="section-card section-spacer">
+                <div class="section-label">Step 2</div>
+                <div class="section-title">Problem Solver</div>
+                <p class="section-desc">Enter a problem ID to load it and request hints or editorial guidance.</p>
+                <div class="input-group">
+                    <input type="text" id="problem-id-input" class="cyber-input" placeholder="e.g. 1920A">
+                    <button id="load-problem-btn" class="cyber-btn">Load Problem</button>
+                </div>
+                <div id="problem-status"></div>
+                
+                <div id="solver-actions" class="hidden">
+                    <p style="font-size: 0.78rem; color: #64748b; margin-top: 15px; margin-bottom: 5px;">How should the coach help?</p>
+                    <div class="btn-row">
+                        <button id="hint-btn" class="cyber-btn btn-hint">💡 Get a Hint</button>
+                        <button id="editorial-btn" class="cyber-btn btn-editorial">📖 Editorial Walkthrough</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3: Recommendations -->
+            <div class="section-card section-spacer">
+                <div class="section-label">Step 3</div>
+                <div class="section-title">Problem Recommendations</div>
+                <p class="section-desc">Select one or more topics and a rating range to get tailored picks.</p>
+                
+                <p style="font-size: 0.78rem; color: #64748b; margin-bottom: 10px;">Topics — select one or more:</p>
+                <div class="tags-container" id="tags-container">
+                    <!-- JavaScript will populate this -->
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <p style="font-size: 0.78rem; color: #64748b; margin-bottom: 5px;">Rating Range (800 - 3500)</p>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <input type="number" id="min-rating" class="cyber-input" value="1500" min="800" max="3500">
+                        <span style="color: #64748b;">to</span>
+                        <input type="number" id="max-rating" class="cyber-input" value="2300" min="800" max="3500">
+                    </div>
+                </div>
+
+                <button id="recommend-btn" class="cyber-btn" style="margin-top: 20px;">🚀 Find 3 Recommended Problems</button>
+                <div id="recommend-status"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN (Chat) -->
+        <div class="right-column">
+            <div class="chat-panel-header">
+                <div class="section-label">Live Session</div>
+                <div class="section-title">AI Coach Chat</div>
+                <p class="section-desc">Ask follow-up questions, request hints, or discuss your approach.</p>
+            </div>
+            
+            <div class="chat-container" id="chat-container">
+                <div class="empty-chat" id="empty-chat-msg">
+                    <div class="empty-chat-icon">💬</div>
+                    <div class="empty-chat-title">No messages yet</div>
+                    <p style="font-size: 0.82rem; max-width: 320px;">Load a problem and request a hint, get recommendations, or type a question below to start.</p>
+                </div>
+                <!-- Chat messages will be appended here -->
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" class="cyber-input" placeholder="Message your AI coach...">
+                <button id="send-chat-btn" class="cyber-btn">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js?v=1.0.2"></script>
+</body>
+</html>
