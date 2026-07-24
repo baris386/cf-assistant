@@ -1,8 +1,0 @@
-streamlit
-pandas
-numpy
-python-dotenv
-requests
-beautifulsoup4
-google-genai
-markdown
